@@ -58,7 +58,7 @@ export default function WhyChooseSection() {
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-16 relative h-[450px] md:h-[400px]">
           {/* Skill Library Card - Tilted Left */}
           <div
-            className="bg-white rounded-lg p-6 text-black max-w-xs w-full md:w-64 md:h-[350px] transform md:absolute md:left-[calc(50%-280px)] md:top-4 hover:-translate-y-2 transition-transform duration-300 shadow-lg z-10"
+            className="bg-white rounded-lg p-6 text-black max-w-xs w-full md:w-64 md:h-[350px] transform md:absolute md:left-[calc(40%-280px)] md:top-20 hover:-translate-y-2 transition-transform duration-300 shadow-lg z-10"
             style={{ transform: "rotate(-25deg)" }}
           >
             <div className="flex justify-center mb-4">
@@ -107,7 +107,7 @@ export default function WhyChooseSection() {
 
           {/* Flexible Pricing Card - Tilted Right */}
           <div
-            className="bg-white rounded-lg p-6 text-black max-w-xs w-full md:w-64 md:h-[350px] transform md:absolute md:right-[calc(50%-280px)] md:top-4 hover:-translate-y-2 transition-transform duration-300 shadow-lg z-10"
+            className="bg-white rounded-lg p-6 text-black max-w-xs w-full md:w-64 md:h-[350px] transform md:absolute md:right-[calc(40%-280px)] md:top-20 hover:-translate-y-2 transition-transform duration-300 shadow-lg z-10"
             style={{ transform: "rotate(25deg)" }}
           >
             <div className="flex justify-center mb-4">
