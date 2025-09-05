@@ -26,72 +26,81 @@ const images = [
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % images.length);
+  const nextSlide = () => setCurrent((p) => (p + 1) % images.length);
   const prevSlide = () =>
-    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+    setCurrent((p) => (p - 1 + images.length) % images.length);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
-    return () => clearInterval(timer);
+    const t = setInterval(nextSlide, 6000);
+    return () => clearInterval(t);
   }, []);
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
-      {/* Image container with slide effect */}
-      <div
-        className="flex h-full transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${current * 100}%)` }}
-      >
-        {images.map((img, i) => (
-          <div key={i} className="relative w-full h-full flex-shrink-0">
+    <div className="relative w-full h-[500px] md:h-[100vh] overflow-hidden">
+      {/* Slides */}
+      {images.map((img, i) => {
+        const isActive = i === current;
+        const isNext = i === (current + 1) % images.length;
+
+        return (
+          <div
+            key={i}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out will-change-transform ${
+              isActive ? "opacity-100 z-20" : "opacity-0 z-10"
+            }`}
+            aria-hidden={!isActive}
+          >
             <Image
               src={img.image}
               alt={img.title || `Slide ${i}`}
               fill
-              sizes="100vw" // full width on any screen
-              priority={i === 0} // preload the first slide
+              sizes="100vw"
+              priority={isActive || isNext}
               className="object-cover"
             />
+
+            {/* Overlay Title */}
+            {isActive && img.title && (
+              <div className="absolute top-32 left-10 pointer-events-none">
+                <h1
+                  className="text-3xl md:text-5xl font-extrabold 
+                             bg-gradient-to-r from-blue-500 to-yellow-400 
+                             bg-clip-text text-transparent drop-shadow"
+                >
+                  {img.title}
+                </h1>
+              </div>
+            )}
           </div>
-        ))}
-      </div>
+        );
+      })}
 
-      {/* Dynamic Overlay Title */}
-      {images[current].title && (
-        <div className="absolute top-32 left-10">
-          <h1
-            className="text-3xl md:text-5xl font-extrabold drop-shadow-lg 
-                 bg-gradient-to-r from-blue-500 to-yellow-400 
-                 bg-clip-text text-transparent"
-          >
-            {images[current].title}
-          </h1>
-        </div>
-      )}
-
-      {/* Left Arrow */}
+      {/* Left Arrow (high z-index so it sits above slides) */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/60 text-black p-3 rounded-full hover:bg-black/70 hover:text-white"
+        aria-label="Previous slide"
+        className="absolute top-1/2 left-4 -translate-y-1/2 z-50 bg-white/85 text-black p-3 rounded-full hover:bg-black/75 hover:text-white transition"
       >
         <ChevronLeft size={24} />
       </button>
 
-      {/* Right Arrow */}
+      {/* Right Arrow (high z-index so it sits above slides) */}
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/60 text-black p-3 rounded-full hover:bg-black/70 hover:text-white"
+        aria-label="Next slide"
+        className="absolute top-1/2 right-4 -translate-y-1/2 z-50 bg-white/85 text-black p-3 rounded-full hover:bg-black/75 hover:text-white transition"
       >
         <ChevronRight size={24} />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 flex space-x-2">
         {images.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-3 rounded-full transition-colors ${
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-3 rounded-full transition-all ${
               i === current ? "bg-red-500 w-5" : "bg-gray-400 w-3"
             }`}
           />
