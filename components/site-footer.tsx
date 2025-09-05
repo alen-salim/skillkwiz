@@ -1,6 +1,18 @@
+"use client";
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Define background colors per route
+  const footerBgColors: Record<string, string> = {
+    "/": "bg-[#003b8e]",
+    "/services": "bg-[#262730]",
+  };
+
+  const footerBg = footerBgColors[pathname] || "bg-[#003b8e]"; // default
   return (
-    <footer className="bg-[#003b8e] text-white">
+    <footer className={`${footerBg} text-white p-6backdrop-blur-lg`}>
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Us Column */}
@@ -79,7 +91,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="border-t border-blue-700">
+      <div className="border-t border-white">
         <div className="max-w-7xl mx-auto px-6 py-4 text-sm text-center">
           Copyright © 2025
         </div>
