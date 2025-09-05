@@ -7,19 +7,19 @@ import Image from "next/image";
 const images = [
   {
     title: "Skill Assessment",
-    image: "/images/homepage/Carousel/Drivers-License.jpg",
+    image: "/images/homepage/Carousel/Drivers-License.webp",
   },
   {
     title: "Quiz Excellence",
-    image: "/images/homepage/Carousel/Pick-Laptop.jpg",
+    image: "/images/homepage/Carousel/Pick-Laptop.webp",
   },
   {
     title: "Learning Journey",
-    image: "/images/homepage/Carousel/Secure-Center.jpg",
+    image: "/images/homepage/Carousel/Secure-Center.webp",
   },
   {
     title: "Hiring Simplified",
-    image: "/images/homepage/Carousel/Skill-Library.jpg",
+    image: "/images/homepage/Carousel/Skill-Library.webp",
   },
 ];
 
