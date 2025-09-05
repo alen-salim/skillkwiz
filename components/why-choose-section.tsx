@@ -1,6 +1,28 @@
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function WhyChooseSection() {
+  const containerRef = useRef(null);
+
+  // Track scroll progress inside this container (0 → 1)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"], // start when it enters, end when it leaves
+  });
+
+  // Left card transforms
+  const leftX = useTransform(scrollYProgress, [0, 1], [0, -260]);
+  const leftY = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const leftRotate = useTransform(scrollYProgress, [0, 1], [0, -15]);
+
+  // Middle card transforms (just scales up a bit)
+  const middleScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
+  // Right card transforms
+  const rightX = useTransform(scrollYProgress, [0, 1], [0, 260]);
+  const rightY = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const rightRotate = useTransform(scrollYProgress, [0, 1], [0, 15]);
   return (
     <section className="py-16 text-white relative overflow-hidden">
       {/* Main container with blue background in the middle and white sides */}
@@ -55,11 +77,14 @@ export default function WhyChooseSection() {
         </p>
 
         {/* Card container with increased height to match image */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-16 relative h-[450px] md:h-[400px]">
-          {/* Skill Library Card - Tilted Left */}
-          <div
-            className="bg-white rounded-lg p-6 text-black max-w-xs w-full md:w-64 md:h-[350px] transform md:absolute md:left-[calc(40%-280px)] md:top-20 hover:-translate-y-2 transition-transform duration-300 shadow-lg z-10"
-            style={{ transform: "rotate(-25deg)" }}
+        <div
+          ref={containerRef}
+          className="relative flex justify-center items-center h-[600px] md:h-[500px] mb-16 overflow-hidden"
+        >
+          {/* Left Card */}
+          <motion.div
+            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg"
+            style={{ x: leftX, y: leftY, rotate: leftRotate }}
           >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
@@ -79,10 +104,13 @@ export default function WhyChooseSection() {
               technical, professional, and soft skills for comprehensive
               candidate evaluation.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Secure Testing Card - Center */}
-          <div className="bg-white rounded-lg p-6 text-black max-w-xs w-full md:w-64 md:h-[350px] transform md:z-20 hover:-translate-y-2 transition-transform duration-300 shadow-lg md:absolute md:left-[calc(50%-130px)]">
+          {/* Middle Card */}
+          <motion.div
+            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg z-20"
+            style={{ scale: middleScale }}
+          >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
                 <img
@@ -103,12 +131,12 @@ export default function WhyChooseSection() {
               recognition, security numbers, which are then periodically
               validated throughout the test.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Flexible Pricing Card - Tilted Right */}
-          <div
-            className="bg-white rounded-lg p-6 text-black max-w-xs w-full md:w-64 md:h-[350px] transform md:absolute md:right-[calc(40%-280px)] md:top-20 hover:-translate-y-2 transition-transform duration-300 shadow-lg z-10"
-            style={{ transform: "rotate(25deg)" }}
+          {/* Right Card */}
+          <motion.div
+            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg"
+            style={{ x: rightX, y: rightY, rotate: rightRotate }}
           >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
@@ -129,7 +157,7 @@ export default function WhyChooseSection() {
               organizations can benefit from our Enterprise plan with unlimited
               testing and custom features.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         <div className="text-center mt-32 md:mt-24 relative z-20">
