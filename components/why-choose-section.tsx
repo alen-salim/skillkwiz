@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function WhyChooseSection() {
   const containerRef = useRef(null);
@@ -31,20 +33,26 @@ export default function WhyChooseSection() {
         <div className="w-[100%] relative">
           {/* Top blue background */}
           <div className="absolute top-0 left-0 right-0 h-[40%]">
-            <img
+            <Image
               src="/images/homepage/why_choose_banner_2.png"
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              priority={false}
+              className="object-cover"
               aria-hidden="true"
             />
           </div>
 
           {/* Bottom blue background with globe */}
           <div className="absolute bottom-0 left-0 right-0 h-[40%]">
-            <img
+            <Image
               src="/images/homepage/why_choose_banner_2.png"
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              priority={false}
+              className="object-cover"
               aria-hidden="true"
             />
 
@@ -83,17 +91,17 @@ export default function WhyChooseSection() {
         >
           {/* Left Card */}
           <motion.div
-            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg"
+            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg transform-gpu"
             style={{ x: leftX, y: leftY, rotate: leftRotate }}
           >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
-                <img
+                {/* <img
                   src="/images/homepage/books.gif"
                   alt=""
                   className="w-20 h-20 object-cover"
                   aria-hidden="true"
-                />
+                /> */}
               </div>
             </div>
             <h3 className="text-[#00418d] text-xl font-bold text-center mb-3">
@@ -108,17 +116,17 @@ export default function WhyChooseSection() {
 
           {/* Middle Card */}
           <motion.div
-            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg z-20"
+            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg z-20 transform-gpu"
             style={{ scale: middleScale }}
           >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
-                <img
+                {/* <img
                   src="/images/homepage/guard.gif"
                   alt=""
                   className="w-20 h-20 object-cover"
                   aria-hidden="true"
-                />
+                /> */}
               </div>
             </div>
             <h3 className="text-[#00418d] text-xl font-bold text-center mb-3">
@@ -135,17 +143,17 @@ export default function WhyChooseSection() {
 
           {/* Right Card */}
           <motion.div
-            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg"
+            className="absolute bg-white rounded-lg p-6 text-black w-64 h-[350px] shadow-lg transform-gpu"
             style={{ x: rightX, y: rightY, rotate: rightRotate }}
           >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
-                <img
+                {/* <img
                   src="/images/homepage/dollar.gif"
                   alt=""
                   className="w-20 h-20 object-cover"
                   aria-hidden="true"
-                />
+                /> */}
               </div>
             </div>
             <h3 className="text-[#00418d] text-xl font-bold text-center mb-3">

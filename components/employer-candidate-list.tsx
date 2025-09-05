@@ -83,7 +83,7 @@ export default function EmployerCandidateList() {
           </div>
           <div className="flex items-center px-4 py-3 border-r border-gray-600">
             <div className="relative w-full">
-              <select className="w-full bg-transparent appearance-none focus:outline-none text-white">
+              <select className="w-full bg-blue-950 appearance-none focus:outline-none text-gray-400">
                 <option value="">Job Family</option>
                 <option value="software">Software Development</option>
                 <option value="data">Data Science</option>

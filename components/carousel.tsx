@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const images = [
   {
@@ -42,12 +43,16 @@ export default function Carousel() {
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {images.map((img, i) => (
-          <img
-            key={i}
-            src={img.image}
-            alt={img.title || `Slide ${i}`}
-            className="w-full h-full object-cover flex-shrink-0"
-          />
+          <div key={i} className="relative w-full h-full flex-shrink-0">
+            <Image
+              src={img.image}
+              alt={img.title || `Slide ${i}`}
+              fill
+              sizes="100vw" // full width on any screen
+              priority={i === 0} // preload the first slide
+              className="object-cover"
+            />
+          </div>
         ))}
       </div>
 

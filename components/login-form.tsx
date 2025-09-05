@@ -91,7 +91,7 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              className="w-full bg-[#EFF3F6] rounded pl-10 pr-10 py-3 text-black placeholder-gray-400 focus:outline-none shadow-md"
+              className="w-full bg-[#EFF3F6] shadow-md rounded pl-10 pr-10 py-3 text-black placeholder-gray-400 focus:outline-none "
               required
             />
             <button
