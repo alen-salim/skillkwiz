@@ -14,7 +14,7 @@ export default function EmployeeRegistration({
   const [phoneOtpSent, setPhoneOtpSent] = useState(false);
 
   return (
-    <div className="text-white">
+    <div className="text-white mb-8">
       <h1 className="text-3xl font-semibold text-center mb-8">
         Employee Registration
       </h1>
