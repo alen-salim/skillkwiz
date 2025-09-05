@@ -57,14 +57,14 @@ export default function WhyChooseSection() {
             />
 
             {/* Globe animation on bottom background */}
-            <div className="absolute inset-0 flex justify-center items-center opacity-60">
+            {/* <div className="absolute inset-0 flex justify-center items-center opacity-60">
               <img
                 src="/images/homepage/home_globe.gif"
                 alt=""
                 className="w-full max-w-2xl"
                 aria-hidden="true"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -96,12 +96,12 @@ export default function WhyChooseSection() {
           >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
-                {/* <img
+                <img
                   src="/images/homepage/books.gif"
                   alt=""
                   className="w-20 h-20 object-cover"
                   aria-hidden="true"
-                /> */}
+                />
               </div>
             </div>
             <h3 className="text-[#00418d] text-xl font-bold text-center mb-3">
@@ -121,12 +121,12 @@ export default function WhyChooseSection() {
           >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
-                {/* <img
+                <img
                   src="/images/homepage/guard.gif"
                   alt=""
                   className="w-20 h-20 object-cover"
                   aria-hidden="true"
-                /> */}
+                />
               </div>
             </div>
             <h3 className="text-[#00418d] text-xl font-bold text-center mb-3">
@@ -148,12 +148,12 @@ export default function WhyChooseSection() {
           >
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-[#c3dfff] rounded-full flex items-center justify-center overflow-hidden">
-                {/* <img
+                <img
                   src="/images/homepage/dollar.gif"
                   alt=""
                   className="w-20 h-20 object-cover"
                   aria-hidden="true"
-                /> */}
+                />
               </div>
             </div>
             <h3 className="text-[#00418d] text-xl font-bold text-center mb-3">

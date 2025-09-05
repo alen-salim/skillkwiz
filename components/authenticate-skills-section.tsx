@@ -17,39 +17,33 @@ export default function AuthenticateSkillsSection() {
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Left shuffle */}
-          <div className="relative w-full md:w-1/3 h-[400px] md:h-[500px]">
-            {/* Image 1 */}
+          {/* Left Flip */}
+          <div className="relative w-full md:w-1/3 h-[400px] md:h-[500px] perspective">
             <div
-              className={`absolute top-0 left-[-30%] w-[80%] h-[80%] transition-all duration-1000 ease-in-out ${
-                leftTop
-                  ? "z-20 translate-x-0 translate-y-0 opacity-100"
-                  : "z-10 translate-x-6 opacity-70"
+              className={`absolute w-[80%] h-[80%] left-[-25%] top-0 transition-transform duration-700 transform-style-preserve-3d ${
+                leftTop ? "rotate-y-0" : "rotate-y-180"
               }`}
             >
-              <Image
-                src="/images/homepage/skills_1.png"
-                alt="Professional working at night"
-                width={350}
-                height={500}
-                className="rounded-lg object-cover w-full h-full"
-              />
-            </div>
-            {/* Image 2 */}
-            <div
-              className={`absolute top-2 left-[-28%] w-[80%] h-[80%] transition-all duration-1000 ease-in-out ${
-                leftTop
-                  ? "z-10 -translate-x-6 opacity-70"
-                  : "z-20 translate-x-0 translate-y-0 opacity-100"
-              }`}
-            >
-              <Image
-                src="/images/homepage/skills_2.png"
-                alt="Professional in tech environment"
-                width={350}
-                height={500}
-                className="rounded-lg object-cover w-full h-full"
-              />
+              {/* Front */}
+              <div className="absolute w-full h-full backface-hidden">
+                <Image
+                  src="/images/homepage/skills_1.png"
+                  alt="Professional working at night"
+                  width={350}
+                  height={500}
+                  className="rounded-lg object-cover w-full h-full"
+                />
+              </div>
+              {/* Back */}
+              <div className="absolute w-full h-full backface-hidden rotate-y-180">
+                <Image
+                  src="/images/homepage/skills_2.png"
+                  alt="Professional in tech environment"
+                  width={350}
+                  height={500}
+                  className="rounded-lg object-cover w-full h-full"
+                />
+              </div>
             </div>
           </div>
 
@@ -68,39 +62,33 @@ export default function AuthenticateSkillsSection() {
             </p>
           </div>
 
-          {/* Right shuffle */}
-          <div className="relative w-full md:w-1/3 h-[400px] md:h-[500px]">
-            {/* Image 3 */}
+          {/* Right Flip */}
+          <div className="relative w-full md:w-1/3 h-[400px] md:h-[500px] perspective">
             <div
-              className={`absolute top-0 right-[-30%] w-[80%] h-[80%] transition-all duration-1000 ease-in-out ${
-                rightTop
-                  ? "z-20 translate-x-0 translate-y-0 opacity-100"
-                  : "z-10 -translate-x-6 opacity-70"
+              className={`absolute w-[80%] h-[80%] right-[-25%] top-0 transition-transform duration-700 transform-style-preserve-3d ${
+                rightTop ? "rotate-y-0" : "rotate-y-180"
               }`}
             >
-              <Image
-                src="/images/homepage/skills_3.png"
-                alt="Professional at workstation"
-                width={350}
-                height={500}
-                className="rounded-lg object-cover w-full h-full"
-              />
-            </div>
-            {/* Image 4 */}
-            <div
-              className={`absolute top-2 right-[-28%] w-[80%] h-[80%] transition-all duration-1000 ease-in-out ${
-                rightTop
-                  ? "z-10 translate-x-6 opacity-70"
-                  : "z-20 translate-x-0 translate-y-0 opacity-100"
-              }`}
-            >
-              <Image
-                src="/images/homepage/skills_4.png"
-                alt="Business professional looking at digital interface"
-                width={350}
-                height={500}
-                className="rounded-lg object-cover w-full h-full"
-              />
+              {/* Front */}
+              <div className="absolute w-full h-full backface-hidden">
+                <Image
+                  src="/images/homepage/skills_3.png"
+                  alt="Professional at workstation"
+                  width={350}
+                  height={500}
+                  className="rounded-lg object-cover w-full h-full"
+                />
+              </div>
+              {/* Back */}
+              <div className="absolute w-full h-full backface-hidden rotate-y-180">
+                <Image
+                  src="/images/homepage/skills_4.png"
+                  alt="Business professional looking at digital interface"
+                  width={350}
+                  height={500}
+                  className="rounded-lg object-cover w-full h-full"
+                />
+              </div>
             </div>
           </div>
         </div>
