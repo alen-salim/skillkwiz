@@ -71,9 +71,9 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050e2d] relative overflow-x-hidden">
+    <div className="min-h-screen  relative overflow-x-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/images/background.png"
           alt="Background"
@@ -81,13 +81,13 @@ export default function ServicesPage() {
           priority
           className="object-cover opacity-100"
         />
-      </div>
+      </div> */}
 
       <div className="relative z-10 pt-24">
         <div className="container mx-auto px-4 max-w-5xl">
           {!isLoggedIn ? (
             // Login Form
-            <div className="bg-gradient-to-r from-[#3a4a7b]/90 to-[#9ba3b9]/90 rounded-lg p-8 backdrop-blur-sm max-w-md mx-auto">
+            <div className="bg-gradient-to-b from-[#C2EFFB] to-[#FBFDFF] rounded-lg p-8 backdrop-blur-sm shadow-lg max-w-md mx-auto">
               <LoginForm onLogin={handleLogin} />
             </div>
           ) : (
@@ -105,7 +105,7 @@ export default function ServicesPage() {
 
               {/* Content Panel */}
               {userType === "employee" ? (
-                <div className="bg-gradient-to-r from-[#3a4a7b]/90 to-[#9ba3b9]/90 rounded-lg p-8 backdrop-blur-sm">
+                <div className="bg-[#6D54B5] rounded-lg p-8 backdrop-blur-sm">
                   {employeeRegistrationSuccess ? (
                     <SuccessMessage
                       title="Registration Successful!"

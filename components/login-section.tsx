@@ -6,7 +6,7 @@ export default function LoginSection() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="bg-white rounded-lg overflow-hidden shadow-xl flex flex-col md:flex-row">
           {/* Left side - Skill Assessment Library */}
-          <div className="w-full md:w-1/2 p-8 relative bg-[url('/images/bg-3.jpg')] bg-cover bg-center bg-no-repeat">
+          <div className="w-full md:w-1/2 p-8 relative bg-[url('/images/bg-2.jpg')] bg-cover bg-center bg-no-repeat">
             <div className="flex flex-col h-full ">
               <div className="text-center mb-6">
                 <h2 className="text-4xl font-bold">

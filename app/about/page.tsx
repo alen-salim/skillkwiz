@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full bg-[#00418d] text-white relative overflow-hidden pt-24">
+      <section className="relative w-full bg-[#00418d] text-white  overflow-hidden pt-24">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           autoPlay
@@ -170,7 +170,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="w-full md:w-1/3">
               <div className="relative">
-                <div className="bg-[#f73e5d] p-4">
+                <div className="">
                   <Image
                     src="/images/aboutpage/Venugopal.png?height=300&width=300"
                     alt="CEO"
@@ -179,7 +179,7 @@ export default function AboutPage() {
                     className="w-full h-auto"
                   />
                 </div>
-                <div className="bg-[#f73e5d] text-white text-center py-3 font-bold text-xl">
+                <div className="bg-[#00418D] text-white text-center py-2 font-bold text-xl">
                   CEO
                 </div>
               </div>
